@@ -1,0 +1,30 @@
+spades:
+  output_path: None
+  job_definition: 'good-science'
+  script: 'spades.py'
+  cpu: 24
+  memory: 30000
+  duration: 3000000
+
+prodigal:
+  output_path: 's3://some-location/here'
+  job_definition: 'gene_calling'
+  cpu: 4
+  memory: 1000
+  duration: 3000000
+
+md5:
+  output_path: 's3://some-location/here'
+  job_definition: 'good-science'
+  script: 'md5_hashes.py'
+  cpu: 4
+  memory: 1000
+  duration: 3000000
+
+qc_data:
+  output_path: 's3://some-location/here'
+  job_definition: 'good-science'
+  script: 'qc_stats.py'
+  cpu: 4
+  memory: 1000
+  duration: 3000000
