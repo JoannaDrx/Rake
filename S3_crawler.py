@@ -3,6 +3,27 @@ import utils
 from sgpy.aws import s3  # common aws utils package
 
 
+# Example pairs (how this dict is generated is very tedious and not included in this repo)
+pairs = {'Z17xxx':   # pair ID
+            {'SMTG': {  # library type
+                's3_path': 's3://some-path/',  # s3 path for this library where all pipeline results are stored
+                'libbc': 'L1700xxx'},  # library barcode
+            'DMTG': {
+                's3_path': 's3://some-other-path/',
+                'libbc': 'L1800xxx',
+                    },
+        'Z1800xxx':
+            {'SMTG': {
+                        's3_path': 's3://some-path/',
+                        'libbc': 'L1700xxx'},
+                    'DMTG': {
+                        's3_path': 's3://some-other-path/',
+                        'libbc': 'L1800xxx',
+                            }
+            }
+            }
+}
+
 def get_paths(pairs):
     """
     For each pair, finds the path to relevant files on S3:
